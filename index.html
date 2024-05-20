@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Interactive card details form</title>
+</head>
+<body>
+
+  <main>
+    <div class="myImage">
+      <picture>
+        <source media="(min-width: 601px)" srcset="./images/bg-main-desktop.png">
+        <source media="(max-width: 600px)" srcset="./images/bg-main-mobile.png">
+        <img src="./images/bg-main-mobile.png" alt="Image">
+      </picture>
+    </div>
+    <div class="right">
+      <form>
+        <label for="card-holder-name">Cardholder Name
+          <input type="text" name="card-holder-name" id="cardHolderName" placeholder="e.g. Jane Appleseed">
+        </label>
+        <p class="name-error">Enter your name</p>
+        <label for="card-num">Card Number
+          <input type="text" name="card-num" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000">
+        </label>
+        <p class="err-para" id="num-error">Wrong format, numbers only</p> 
+        <div class="expiryInputs">
+          <div class="exp-date">
+            <label for="exp-date">Exp. Date (MM/YY)</label>
+            <div class="inputs">
+              <input type="text" name="exp-date" id="exp-mm" placeholder="MM">
+              <input type="text" name="exp-date" id="exp-yy" placeholder="YY">
+            </div>
+            <p class="err-para" id="exp-error">Cant be, blank</p>
+          </div>
+          <div class="cvc-num">
+            <label for="cvc-num">CVC
+              <input type="text" name="cvc-num" id="cvcNumber" placeholder="e.g. 123">
+            </label>
+          </div>
+        </div>
+        <input type="submit" id="confirmBtn" value="Confirm">
+      </form>
+      <div id="thankyou" style="display: none;">
+        <img src="./images/icon-complete.svg" alt="Complete icon">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button type="button" id="continueBtn">Continue</button>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card-front">
+        <img src="./images/bg-card-front.png" alt="Card front">
+        <div class="content">
+          <div class="card-logo">
+            <img src="./images/card-logo.svg" alt="Logo">
+          </div>
+          <div class="bottom">
+            <p class="card-num">0000 0000 0000 0000</p>
+            <div class="expiry">
+              <span class="cardholder">FELICIA LEIRE</span>
+              <span class="card-exp">00/00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-back">
+        <img src="./images/bg-card-back.png" alt="Card back">
+        <span class="cvc">000</span>
+      </div>
+    </div>
+  </main>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
